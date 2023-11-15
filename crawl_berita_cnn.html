@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ringkasan Berita pada Website CNN Indonesia - 1&nbsp; Crawl Berita CNN</title>
+<title>Repository Tugas Pencarian dan Penambangan Web - 3&nbsp; Crawl Berita CNN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./news_summarization.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./topic_modeling_pta.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./crawl_berita_cnn.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./crawl_berita_cnn.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Ringkasan Berita pada Website CNN Indonesia</a> 
+      <a href="./">Repository Tugas Pencarian dan Penambangan Web</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -145,14 +145,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./crawl_pta_trunojoyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl PTA Trunojoyo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./topic_modeling_pta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Topic Modeling PTA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./crawl_berita_cnn.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./news_summarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span></a>
   </div>
 </li>
     </ul>
@@ -165,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#crawling-data" id="toc-crawling-data" class="nav-link active" data-scroll-target="#crawling-data"><span class="header-section-number">2</span> Crawling Data</a></li>
+  <li><a href="#crawling-data" id="toc-crawling-data" class="nav-link active" data-scroll-target="#crawling-data"><span class="header-section-number">4</span> Crawling Data</a></li>
   </ul>
 </nav>
     </div>
@@ -174,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></h1>
 </div>
 
 
@@ -210,8 +222,8 @@ Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="crawling-data" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Crawling Data</h1>
+<section id="crawling-data" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Crawling Data</h1>
 <p>Teknik crawling data adalah proses pengumpulan informasi dari berbagai sumber di internet secara otomatis. Crawling data dilakukan oleh program yang disebut “web crawler”. Web crawler pada proses ini menggunakan beautifulsoup untuk melakukan ekstraksi halaman konten tersebut agar dapat mengambil isi-isi konten pada berita di website CNN Indonesia. Terdapat juga libraly request yang digunakan untuk meminta respon pada situs yang akan dilakukan crawling data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> os <span class="im">import</span> replace</span>
@@ -1000,13 +1012,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tentang</span>
+      <a href="./topic_modeling_pta.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Topic Modeling PTA</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./news_summarization.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

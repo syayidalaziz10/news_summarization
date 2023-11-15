@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Ringkasan Berita pada Website CNN Indonesia - 2&nbsp; Ringkasan Berita</title>
+<title>Repository Tugas Pencarian dan Penambangan Web - 4&nbsp; Ringkasan Berita</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./news_summarization.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./news_summarization.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Ringkasan Berita pada Website CNN Indonesia</a> 
+      <a href="./">Repository Tugas Pencarian dan Penambangan Web</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -145,14 +145,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./crawl_pta_trunojoyo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl PTA Trunojoyo</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./topic_modeling_pta.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Topic Modeling PTA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./crawl_berita_cnn.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./news_summarization.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span></a>
   </div>
 </li>
     </ul>
@@ -165,29 +177,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#instalasi" id="toc-instalasi" class="nav-link active" data-scroll-target="#instalasi"><span class="header-section-number">3</span> Instalasi</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">4</span> Data</a></li>
-  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing"><span class="header-section-number">5</span> Preprocessing</a></li>
-  <li><a href="#ekstraksi-fitur" id="toc-ekstraksi-fitur" class="nav-link" data-scroll-target="#ekstraksi-fitur"><span class="header-section-number">6</span> Ekstraksi Fitur</a>
+  <li><a href="#instalasi" id="toc-instalasi" class="nav-link active" data-scroll-target="#instalasi"><span class="header-section-number">5</span> Instalasi</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">6</span> Data</a></li>
+  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing"><span class="header-section-number">7</span> Preprocessing</a></li>
+  <li><a href="#ekstraksi-fitur" id="toc-ekstraksi-fitur" class="nav-link" data-scroll-target="#ekstraksi-fitur"><span class="header-section-number">8</span> Ekstraksi Fitur</a>
   <ul class="collapse">
-  <li><a href="#tf-idf" id="toc-tf-idf" class="nav-link" data-scroll-target="#tf-idf"><span class="header-section-number">6.1</span> TF-IDF</a></li>
+  <li><a href="#tf-idf" id="toc-tf-idf" class="nav-link" data-scroll-target="#tf-idf"><span class="header-section-number">8.1</span> TF-IDF</a></li>
   </ul></li>
-  <li><a href="#membentuk-graph" id="toc-membentuk-graph" class="nav-link" data-scroll-target="#membentuk-graph"><span class="header-section-number">7</span> Membentuk Graph</a>
+  <li><a href="#membentuk-graph" id="toc-membentuk-graph" class="nav-link" data-scroll-target="#membentuk-graph"><span class="header-section-number">9</span> Membentuk Graph</a>
   <ul class="collapse">
-  <li><a href="#cosine-similarity" id="toc-cosine-similarity" class="nav-link" data-scroll-target="#cosine-similarity"><span class="header-section-number">7.1</span> Cosine Similarity</a></li>
-  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph"><span class="header-section-number">7.2</span> Graph</a></li>
+  <li><a href="#cosine-similarity" id="toc-cosine-similarity" class="nav-link" data-scroll-target="#cosine-similarity"><span class="header-section-number">9.1</span> Cosine Similarity</a></li>
+  <li><a href="#graph" id="toc-graph" class="nav-link" data-scroll-target="#graph"><span class="header-section-number">9.2</span> Graph</a></li>
   </ul></li>
-  <li><a href="#matriks-sentralitas" id="toc-matriks-sentralitas" class="nav-link" data-scroll-target="#matriks-sentralitas"><span class="header-section-number">8</span> Matriks Sentralitas</a>
+  <li><a href="#matriks-sentralitas" id="toc-matriks-sentralitas" class="nav-link" data-scroll-target="#matriks-sentralitas"><span class="header-section-number">10</span> Matriks Sentralitas</a>
   <ul class="collapse">
-  <li><a href="#closeness-centrality" id="toc-closeness-centrality" class="nav-link" data-scroll-target="#closeness-centrality"><span class="header-section-number">8.1</span> Closeness Centrality</a></li>
-  <li><a href="#page-rank" id="toc-page-rank" class="nav-link" data-scroll-target="#page-rank"><span class="header-section-number">8.2</span> Page Rank</a></li>
-  <li><a href="#eigen-vector" id="toc-eigen-vector" class="nav-link" data-scroll-target="#eigen-vector"><span class="header-section-number">8.3</span> Eigen Vector</a></li>
+  <li><a href="#closeness-centrality" id="toc-closeness-centrality" class="nav-link" data-scroll-target="#closeness-centrality"><span class="header-section-number">10.1</span> Closeness Centrality</a></li>
+  <li><a href="#page-rank" id="toc-page-rank" class="nav-link" data-scroll-target="#page-rank"><span class="header-section-number">10.2</span> Page Rank</a></li>
+  <li><a href="#eigen-vector" id="toc-eigen-vector" class="nav-link" data-scroll-target="#eigen-vector"><span class="header-section-number">10.3</span> Eigen Vector</a></li>
   </ul></li>
-  <li><a href="#evaluasi" id="toc-evaluasi" class="nav-link" data-scroll-target="#evaluasi"><span class="header-section-number">9</span> Evaluasi</a>
+  <li><a href="#evaluasi" id="toc-evaluasi" class="nav-link" data-scroll-target="#evaluasi"><span class="header-section-number">11</span> Evaluasi</a>
   <ul class="collapse">
-  <li><a href="#closeness-centrality-1" id="toc-closeness-centrality-1" class="nav-link" data-scroll-target="#closeness-centrality-1"><span class="header-section-number">9.1</span> Closeness Centrality</a></li>
-  <li><a href="#page-rank-1" id="toc-page-rank-1" class="nav-link" data-scroll-target="#page-rank-1"><span class="header-section-number">9.2</span> Page Rank</a></li>
-  <li><a href="#eigen-vector-1" id="toc-eigen-vector-1" class="nav-link" data-scroll-target="#eigen-vector-1"><span class="header-section-number">9.3</span> Eigen Vector</a></li>
+  <li><a href="#closeness-centrality-1" id="toc-closeness-centrality-1" class="nav-link" data-scroll-target="#closeness-centrality-1"><span class="header-section-number">11.1</span> Closeness Centrality</a></li>
+  <li><a href="#page-rank-1" id="toc-page-rank-1" class="nav-link" data-scroll-target="#page-rank-1"><span class="header-section-number">11.2</span> Page Rank</a></li>
+  <li><a href="#eigen-vector-1" id="toc-eigen-vector-1" class="nav-link" data-scroll-target="#eigen-vector-1"><span class="header-section-number">11.3</span> Eigen Vector</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></h1>
 </div>
 
 
@@ -212,8 +224,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="instalasi" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Instalasi</h1>
+<section id="instalasi" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Instalasi</h1>
 <div class="cell" data-outputid="f4df91b7-cd93-4561-a3e2-2b4eb544473a" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install rouge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -246,8 +258,8 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 </section>
-<section id="data" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Data</h1>
+<section id="data" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Data</h1>
 <p>Data yang digunakan menggunakan hasil crawling data pada website CNN Indonesia dalam kategori berita nasional.</p>
 <div class="cell" data-outputid="53fc52b5-143d-4256-b5ae-1294f3074be6" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
@@ -739,8 +751,8 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>berita <span class="op">=</span> df[<span class="st">'berita'</span>].iloc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="preprocessing" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Preprocessing</h1>
+<section id="preprocessing" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Preprocessing</h1>
 <p>Pada analisis ringkasan dokumen kali ini akan menggunakan 2 metode pengujian, pengujian pertama akan dilakukan langkah ringkasan berita tanpa menggunakan preprocessing dan tahapan pengujian kedua berita yang diringkas akan menggunakan tahapan preprocessing. Tahapan preprocessing ini antara lain yaitu menghapus angka, simbol dan stopword pada berita.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocessing(text):</span>
@@ -760,8 +772,8 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>kalimat_preprocessing <span class="op">=</span> preprocessing(berita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ekstraksi-fitur" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Ekstraksi Fitur</h1>
+<section id="ekstraksi-fitur" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Ekstraksi Fitur</h1>
 <p>Ekstraksi fitur pada tahapan ini menggunakan TF-IDF untuk membentuk vektor pada setiap kalimatnya, sedangkan fitur yang akan digunakan pada vektor TF-IDF ini meliputi <em>term</em> pada keseluruhan dokumen.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>kalimat <span class="op">=</span> nltk.sent_tokenize(berita) <span class="co">#memecah dokumen berdasarkan kalimatnya tanpa preprocessing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -769,8 +781,8 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>kalimat_preprocessing <span class="op">=</span> nltk.sent_tokenize(kalimat_preprocessing) <span class="co">#memecah dokumen berdasarkan kalimatnya menggunakan preprocessing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="tf-idf" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="tf-idf"><span class="header-section-number">6.1</span> TF-IDF</h2>
+<section id="tf-idf" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="tf-idf"><span class="header-section-number">8.1</span> TF-IDF</h2>
 <p><em>Term Frequency-Inverse Document Frequency</em> (TF-IDF) adalah vektor yang digunakan untuk mengevaluasi pentingnya kata-kata dalam sebuah dokumen. Nilai frekuensi kemunculan kata dalam setiap dokumen ini menunjukkan seberapa penting kata tersebut dalam dokumen. Berikut merupakan rumus untuk menghitung TF-IDF: <br><br></p>
 <p><span class="math display">\[W_{d,t} = tf_{t,d} \cdot idf_{t,d}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(W_{d,t}\)</span> = Nilai T<em>erm Frequency</em> untuk <em>term</em> (t) dalam dokumen (d). <br> <span class="math inline">\(tf_{t,d}\)</span> = Frekuensi kemunculan <em>term </em>(t) dalam dokumen (d). <br> <span class="math inline">\(idf_{t,d}\)</span> = Inverse Document Frequency Nilai kebalikan frekuensi dokumen <em>term</em> (t) dalam dokumen (d).<br><br> Pada dasarnya TF-IDF adalah gabungan dari <em>Term Frequency</em> (TF) dan <em>Inverse Document Frequency</em> (IDF) sehingga sebelum kita membentuk nilai TFIDF, maka kita harus menghitung kedua nilai tersebut. <em>Term Frequency</em> (TF) merupakan perhitungan yang digunakan untuk menentukan seberapa sering kata-kata muncul dalam sebuah dokumen.<br><br> <span class="math display">\[tf= \frac{tf}{max(tf)}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(tf\)</span> = banyaknya kata yang dicari dalam dokumen <br> <span class="math inline">\(max⁡(tf)\)</span> = jumlah kemunculan term terbanyak pada dokumen yang sama <br><br></p>
 <p>Sedangkan <em>Inverse Document Frequency</em> (IDF) menilai kata-kata yang sering muncul sebagai kurang signifikan karena kemunculannya dalam banyak dokumen. Semakin rendah nilai IDF, maka kata tersebut akan dianggap kurang berarti dan sebaliknya, semakin tinggi nilai IDF maka kata tersebut akan dianggap lebih relevan atau penting dalam dokumen tersebut. <br><br> <span class="math display">\[idf_{t}= \frac{D}{max(df_{t})}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(D\)</span> = total dokumen <br> <span class="math inline">\(df⁡(t)\)</span> = jumlah dokumen yang mengandung <em>term</em> (t) <br><br></p>
@@ -2100,11 +2112,11 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </section>
 </section>
-<section id="membentuk-graph" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Membentuk Graph</h1>
+<section id="membentuk-graph" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Membentuk Graph</h1>
 <p>Dalam meringkas dokumen ini diperlukan untuk membentuk graph sebagai gambaran antara kedekatan pada masing-masing kalimat, sehingga dalam ringkasan dokumen yang dihasilkan akan memunculkan kalimat-kalimat penting dan memiliki kedekatan di setiap dokumennya.</p>
-<section id="cosine-similarity" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="cosine-similarity"><span class="header-section-number">7.1</span> Cosine Similarity</h2>
+<section id="cosine-similarity" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="cosine-similarity"><span class="header-section-number">9.1</span> Cosine Similarity</h2>
 <p><em>Cosine similarity</em> digunakan untuk mengukur seberapa mirip dua vektor dalam ruang berdimensi banyak. Hasil dari <em>cosine similarity</em> ini akan menentukan apakah vektor tersebut menuju ke arah yang sama. Semakin kecil sudut antara dua vektor, maka semakin mirip satu sama lain sedangkan begitu juga sebaliknya, semakin besar nilai <em>cosine similarity</em> maka vektor tersebut dianggap jauh kemiripannya. Dalam ringkasan dokumen ini penting untuk menghitung nilai <em>cosine similarity</em> untuk mengetahui hubungan kesamaan antara kalimat satu dengan kalimat lainnya. Vektor yang digunakan untuk menghitung nilai <em>cosine simmilarity</em> ini adalah hasil dari TF-IDF pada langkah sebelumnya. Berikut merupakan rumus yang digunakan untuk menghitung nilai <em>cosine simmilarity</em>.<br><br> <span class="math display">\[simmilarity(A, B) = \frac{A \cdot B}{|A||B|}\]</span> <br><br></p>
 <p>Keterangan = <br> A.B = Vector dot product dari A dan B dihitung dengan <span class="math inline">\(\sum_{i=1}^n x_{k}y_{k}\)</span> <br> |A| = Panjang vektor A dihitung dengan <span class="math inline">\(\sum_{i=1}^n x_{k}^2\)</span> <br> |B| = Panjang vektor A dihitung dengan <span class="math inline">\(\sum_{i=1}^n y_{k}^2\)</span> <br></p>
 <p>Cosine Similarity Tanpa Preprocessing</p>
@@ -3282,8 +3294,8 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 </section>
-<section id="graph" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">7.2</span> Graph</h2>
+<section id="graph" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">9.2</span> Graph</h2>
 <p>Hasil dari nilai <em>cosine simmilarity</em> ini akan dapat digunakan untuk membentuk graph dengan menggunakan modul nx.graph. Graph ini akan menggambarkan ilustrasi dari kedekatan setiap kalimatnya dalam berita tersebut. Dalam proses penggambaran graph tersebut diperlukan ambang batas (<em>treshold</em>) yang digunakan untuk memberikan batasan agar keseluruhan kalimatnya tidak dihubungkan menggunakan garis <em>(edge)</em>. Nilai ambang batas (<em>treshold</em>) yang digunakan adalah 0.1</p>
 <p>Graph Tanpa Preprocessing</p>
 <div class="cell" data-outputid="02dabde0-4596-4211-c2a6-91b5df090073" data-execution_count="16">
@@ -3331,11 +3343,11 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </section>
 </section>
-<section id="matriks-sentralitas" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Matriks Sentralitas</h1>
+<section id="matriks-sentralitas" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Matriks Sentralitas</h1>
 <p>Matriks Sentralitas adalah matriks yang digunakan untuk merepresentasikan ukuran sentralitas dari setiap <em>node</em> dalam jaringan. Sentralitas adalah konsep dalam analisis jaringan yang mencoba mengukur sejauh mana suatu <em>node</em> berada di pusat jaringan atau sejauh mana suatu <em>node</em> penting dalam graph. Beberapa matriks ini akan digunakan untuk membangun ringkasan dokumen yang dibuat oleh sistem, matriks ini didapatkan dari bentuk graph yang telah terbentuk pada langkah sebelumnya.</p>
-<section id="closeness-centrality" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="closeness-centrality"><span class="header-section-number">8.1</span> Closeness Centrality</h2>
+<section id="closeness-centrality" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="closeness-centrality"><span class="header-section-number">10.1</span> Closeness Centrality</h2>
 <p><em>Closeness similarity</em> adalah ukuran sejauh mana nilai kedekatan antara pasangan node dalam suatu jaringan serupa. Dengan ini kita dapat mengukur kesamaan struktural antara node-node dalam graf berdasarkan nilai kedekatan mereka. Closeness similarity dirumuskan sebagai berikut.</p>
 <p><span class="math display">\[CC(i) = \frac{N-1}{\sum_{j}d(i, j)} \]</span> <br></p>
 <p>Keterangan = <br> N = nomor dari masing-masing node <br> <span class="math inline">\(d(i, j)\)</span> = d adalah panjang jalur terpendek antara node i dan j dalam jaringan</p>
@@ -3440,8 +3452,8 @@ Kalimat: Sementara untuk Velix, tugas keamanan di Papua Pegunungan menjadi prior
 </div>
 </div>
 </section>
-<section id="page-rank" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="page-rank"><span class="header-section-number">8.2</span> Page Rank</h2>
+<section id="page-rank" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="page-rank"><span class="header-section-number">10.2</span> Page Rank</h2>
 <p>Dalam konteks ini, dokumen dianggap sebagai “halaman” yang terhubung oleh hubungan yang merefleksikan keterkaitan atau relevansinya. Dengan menerapkan konsep PageRank, dokumen yang dianggap lebih “penting” atau relevan dapat diberikan skor lebih tinggi. Penggunaan faktor damping, serupa dengan dalam algoritma PageRank, dapat membantu mengontrol sejauh mana pengaruh satu dokumen terhadap yang lain. Dengan memberikan skor pada dokumen berdasarkan hubungan mereka dalam jaringan informasi, kita dapat menghasilkan ringkasan yang mencerminkan tingkat relevansi dan pentingnya masing-masing dokumen dalam konteks keseluruhan. <br><br> <span class="math display">\[S(V_{i}) = (1-d)+d * \sum\frac{1}{Out(V_{j})}S(V_{j})\]</span> <br><br></p>
 <p>Keterangan = <br> d = faktor redaman, jika tidak ada sambungan keluar <br> in(Vi) = tautan masuk dari i, yang merupakan satu set <br> out(Vj) = tautan keluar dari j, yang merupakan satu set <br> |out(Vj)| = jumlah tautan keluar</p>
 <p>Page Rank Tanpa Preprocessing</p>
@@ -3545,8 +3557,8 @@ Kalimat: Pada saat bersamaan, Tito juga melantik Velix Vernando Wanggai sebagai 
 </div>
 </div>
 </section>
-<section id="eigen-vector" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="eigen-vector"><span class="header-section-number">8.3</span> Eigen Vector</h2>
+<section id="eigen-vector" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="eigen-vector"><span class="header-section-number">10.3</span> Eigen Vector</h2>
 <p>Dalam ringkasan dokumen, eigenvector tidak digunakan secara langsung untuk menghitung ringkasan. Namun, Anda dapat memanfaatkan konsep pengukuran penting dari eigenvector untuk memberikan bobot atau skor pada elemen-elemen dalam dokumen yang mungkin memiliki kepentingan lebih besar dalam rangka membuat ringkasan. Perhitungan eigenvector yang didapatkan dari matriks korelasi untuk menentukan bobot relatif setiap dokumen atau kata. Berikut merupakan rumus untuk menghitung nilai eigenvector. <br><br> <span class="math display">\[det(λ.I-A)\]</span><br><br></p>
 <p>Keterangan = <br> det(⋅) = Merupakan fungsi determinan, yang menghasilkan nilai determinan dari suatu matriks. <br> λ = Merupakan simbol yang mewakili eigenvalue yang sedang dicari. <br> I = Merupakan matriks identitas yang sesuai dengan dimensi matriks. <br> A = Merupakan matriks yang eigenvalues-nya ingin dicari.</p>
 <p>Eigen Vector Tanpa Preprocessing</p>
@@ -3650,8 +3662,8 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 </div>
 </section>
 </section>
-<section id="evaluasi" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Evaluasi</h1>
+<section id="evaluasi" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Evaluasi</h1>
 <p>ROUGE (<em>Recall-Oriented Understudy for Gisting Evaluation</em>) adalah sekelompok metrik evaluasi otomatis yang umum digunakan untuk mengukur kualitas ringkasan teks. ROUGE memiliki beberapa varian, dan di antaranya, ROUGE-1, ROUGE-2, dan ROUGE-L merupakan metrik yang sering digunakan untuk mengukur sejauh mana kedekatan ringkasan sistem dengan ringkasan referensi.</p>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#referensi ringkasan yang dibuat secara manual</span></span>
@@ -3669,8 +3681,8 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    scores <span class="op">=</span> rouge.get_scores(hasil_ringkasan, referensi)</span>
 <span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (scores)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="closeness-centrality-1" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="closeness-centrality-1"><span class="header-section-number">9.1</span> Closeness Centrality</h2>
+<section id="closeness-centrality-1" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="closeness-centrality-1"><span class="header-section-number">11.1</span> Closeness Centrality</h2>
 <div class="cell" data-outputid="d76690ef-f79d-46e7-e328-1f08de6dcf7b" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_closeness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3686,8 +3698,8 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 <p>Berikut adalah hasil simpulan berdasarkan evaluasi ROUGE pada <em>Closeness Centrality</em>:</p>
 <p>Berdasarkan evaluasi ROUGE <em>closeness centrality</em>, ditemukan bahwa tanpa menggunakan preprocessing, sistem ringkasan cenderung mencapai hasil yang lebih baik. Secara khusus, pada metrik ROUGE-1, sistem tanpa preprocessing memiliki recall sekitar 0.33, precision sekitar 0.56, dan F1-Score sekitar 0.42. Sebaliknya, ketika menggunakan preprocessing, nilai recall turun menjadi sekitar 0.23, precision sekitar 0.43, dan F1-Score sekitar 0.30.</p>
 </section>
-<section id="page-rank-1" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="page-rank-1"><span class="header-section-number">9.2</span> Page Rank</h2>
+<section id="page-rank-1" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="page-rank-1"><span class="header-section-number">11.2</span> Page Rank</h2>
 <div class="cell" data-outputid="22c85a46-a720-41fa-eb4e-468f270bc356" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_pagerank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3702,8 +3714,8 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 </div>
 <p>Berdasarkan hasil evaluasi ROUGE pada <em>Page Rank</em> untuk ringkasan dengan dan tanpa preprocessing menggunakan metode <em>Page Rank</em>, dapat disimpulkan bahwa tanpa preprocessing sistem mampu mencapai hasil yang lebih baik dalam sebagian besar metrik evaluasi. Pada metrik ROUGE-1, sistem tanpa preprocessing memiliki nilai recall sekitar 0.41, precision sekitar 0.675, dan F1-Score sekitar 0.51. Sementara itu, dengan preprocessing, nilai recall turun menjadi sekitar 0.30, precision sekitar 0.571, dan F1-Score sekitar 0.40</p>
 </section>
-<section id="eigen-vector-1" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="eigen-vector-1"><span class="header-section-number">9.3</span> Eigen Vector</h2>
+<section id="eigen-vector-1" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="eigen-vector-1"><span class="header-section-number">11.3</span> Eigen Vector</h2>
 <div class="cell" data-outputid="e481f200-1287-4e42-86e6-741faff39517" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_eigenvector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -3959,7 +3971,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./crawl_berita_cnn.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crawl Berita CNN</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
