@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./news_keywords.html" rel="next">
 <link href="./crawl_berita_cnn.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -167,6 +168,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ringkasan Berita</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./news_keywords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mencari Kata Kunci Berita</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./news_classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">News Classification</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -224,16 +237,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>Aplikasi untuk ringkasan berita 👉 <a href="https://https://syayidalaziz-berita-ringkas.hf.space/">Berita Ringkas</a></p>
 <section id="instalasi" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Instalasi</h1>
-<div class="cell" data-outputid="f4df91b7-cd93-4561-a3e2-2b4eb544473a" data-execution_count="1">
+<div class="cell" data-outputid="f4df91b7-cd93-4561-a3e2-2b4eb544473a">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install rouge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Requirement already satisfied: rouge in /usr/local/lib/python3.10/dist-packages (1.0.1)
 Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from rouge) (1.16.0)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
@@ -244,7 +258,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rouge <span class="im">import</span> Rouge</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="d5dbf201-745f-4f63-dc0f-e283e5b06d21" data-execution_count="3">
+<div class="cell" data-outputid="d5dbf201-745f-4f63-dc0f-e283e5b06d21">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"stopwords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -261,7 +275,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <section id="data" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Data</h1>
 <p>Data yang digunakan menggunakan hasil crawling data pada website CNN Indonesia dalam kategori berita nasional.</p>
-<div class="cell" data-outputid="53fc52b5-143d-4256-b5ae-1294f3074be6" data-execution_count="4">
+<div class="cell" data-outputid="53fc52b5-143d-4256-b5ae-1294f3074be6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">'/content/drive'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -747,14 +761,14 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 <p>Untuk meringkas suatu dokumen, maka kita hanya memerlukan satu sampel berita yang akan digunakan dengan menggunakan berita pertama</p>
-<div class="cell" data-execution_count="5">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>berita <span class="op">=</span> df[<span class="st">'berita'</span>].iloc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="preprocessing" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Preprocessing</h1>
 <p>Pada analisis ringkasan dokumen kali ini akan menggunakan 2 metode pengujian, pengujian pertama akan dilakukan langkah ringkasan berita tanpa menggunakan preprocessing dan tahapan pengujian kedua berita yang diringkas akan menggunakan tahapan preprocessing. Tahapan preprocessing ini antara lain yaitu menghapus angka, simbol dan stopword pada berita.</p>
-<div class="cell" data-execution_count="6">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocessing(text):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r'\d+'</span>, <span class="st">''</span>, text)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r'[^\w\s.]'</span>, <span class="st">''</span>, text)</span>
@@ -768,17 +782,17 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> preprocessing_text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>kalimat_preprocessing <span class="op">=</span> preprocessing(berita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ekstraksi-fitur" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> Ekstraksi Fitur</h1>
 <p>Ekstraksi fitur pada tahapan ini menggunakan TF-IDF untuk membentuk vektor pada setiap kalimatnya, sedangkan fitur yang akan digunakan pada vektor TF-IDF ini meliputi <em>term</em> pada keseluruhan dokumen.</p>
-<div class="cell" data-execution_count="8">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>kalimat <span class="op">=</span> nltk.sent_tokenize(berita) <span class="co">#memecah dokumen berdasarkan kalimatnya tanpa preprocessing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>kalimat_preprocessing <span class="op">=</span> nltk.sent_tokenize(kalimat_preprocessing) <span class="co">#memecah dokumen berdasarkan kalimatnya menggunakan preprocessing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="tf-idf" class="level2" data-number="8.1">
@@ -787,7 +801,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <p><span class="math display">\[W_{d,t} = tf_{t,d} \cdot idf_{t,d}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(W_{d,t}\)</span> = Nilai T<em>erm Frequency</em> untuk <em>term</em> (t) dalam dokumen (d). <br> <span class="math inline">\(tf_{t,d}\)</span> = Frekuensi kemunculan <em>term </em>(t) dalam dokumen (d). <br> <span class="math inline">\(idf_{t,d}\)</span> = Inverse Document Frequency Nilai kebalikan frekuensi dokumen <em>term</em> (t) dalam dokumen (d).<br><br> Pada dasarnya TF-IDF adalah gabungan dari <em>Term Frequency</em> (TF) dan <em>Inverse Document Frequency</em> (IDF) sehingga sebelum kita membentuk nilai TFIDF, maka kita harus menghitung kedua nilai tersebut. <em>Term Frequency</em> (TF) merupakan perhitungan yang digunakan untuk menentukan seberapa sering kata-kata muncul dalam sebuah dokumen.<br><br> <span class="math display">\[tf= \frac{tf}{max(tf)}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(tf\)</span> = banyaknya kata yang dicari dalam dokumen <br> <span class="math inline">\(max⁡(tf)\)</span> = jumlah kemunculan term terbanyak pada dokumen yang sama <br><br></p>
 <p>Sedangkan <em>Inverse Document Frequency</em> (IDF) menilai kata-kata yang sering muncul sebagai kurang signifikan karena kemunculannya dalam banyak dokumen. Semakin rendah nilai IDF, maka kata tersebut akan dianggap kurang berarti dan sebaliknya, semakin tinggi nilai IDF maka kata tersebut akan dianggap lebih relevan atau penting dalam dokumen tersebut. <br><br> <span class="math display">\[idf_{t}= \frac{D}{max(df_{t})}\]</span> <br><br> Keterangan = <br> <span class="math inline">\(D\)</span> = total dokumen <br> <span class="math inline">\(df⁡(t)\)</span> = jumlah dokumen yang mengandung <em>term</em> (t) <br><br></p>
 <p>TF-IDF Tanpa Preprocessing</p>
-<div class="cell" data-outputid="ca8b09e2-a2bc-4699-e4c5-dba04f6f2ea0" data-execution_count="10">
+<div class="cell" data-outputid="ca8b09e2-a2bc-4699-e4c5-dba04f6f2ea0">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tfidf_vectorizer <span class="op">=</span> TfidfVectorizer()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>tfidf <span class="op">=</span> tfidf_vectorizer.fit_transform(kalimat)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1449,7 +1463,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 <p>TF-IDF Menggunakan Preprocessing</p>
-<div class="cell" data-outputid="c0fb2f6c-0450-4697-e6bb-59396ac79f34" data-execution_count="11">
+<div class="cell" data-outputid="c0fb2f6c-0450-4697-e6bb-59396ac79f34">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tfidf_vectorizer <span class="op">=</span> TfidfVectorizer()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tfidf_preprocessing <span class="op">=</span> tfidf_vectorizer.fit_transform(kalimat_preprocessing)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2120,10 +2134,10 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <p><em>Cosine similarity</em> digunakan untuk mengukur seberapa mirip dua vektor dalam ruang berdimensi banyak. Hasil dari <em>cosine similarity</em> ini akan menentukan apakah vektor tersebut menuju ke arah yang sama. Semakin kecil sudut antara dua vektor, maka semakin mirip satu sama lain sedangkan begitu juga sebaliknya, semakin besar nilai <em>cosine similarity</em> maka vektor tersebut dianggap jauh kemiripannya. Dalam ringkasan dokumen ini penting untuk menghitung nilai <em>cosine similarity</em> untuk mengetahui hubungan kesamaan antara kalimat satu dengan kalimat lainnya. Vektor yang digunakan untuk menghitung nilai <em>cosine simmilarity</em> ini adalah hasil dari TF-IDF pada langkah sebelumnya. Berikut merupakan rumus yang digunakan untuk menghitung nilai <em>cosine simmilarity</em>.<br><br> <span class="math display">\[simmilarity(A, B) = \frac{A \cdot B}{|A||B|}\]</span> <br><br></p>
 <p>Keterangan = <br> A.B = Vector dot product dari A dan B dihitung dengan <span class="math inline">\(\sum_{i=1}^n x_{k}y_{k}\)</span> <br> |A| = Panjang vektor A dihitung dengan <span class="math inline">\(\sum_{i=1}^n x_{k}^2\)</span> <br> |B| = Panjang vektor A dihitung dengan <span class="math inline">\(\sum_{i=1}^n y_{k}^2\)</span> <br></p>
 <p>Cosine Similarity Tanpa Preprocessing</p>
-<div class="cell" data-execution_count="12">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>cosine <span class="op">=</span> cosine_similarity(tfidf, tfidf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="f371b3f2-2862-47d3-fe77-aa19bea4a188" data-execution_count="13">
+<div class="cell" data-outputid="f371b3f2-2862-47d3-fe77-aa19bea4a188">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>similarity <span class="op">=</span> pd.DataFrame(cosine, columns<span class="op">=</span><span class="bu">range</span>(<span class="bu">len</span>(kalimat)), index<span class="op">=</span><span class="bu">range</span>(<span class="bu">len</span>(kalimat)))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>similarity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -2707,10 +2721,10 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 <p>Cosine Similarity Menggunakan Preprocessing</p>
-<div class="cell" data-execution_count="14">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>cosine_preprocessing <span class="op">=</span> cosine_similarity(tfidf_preprocessing, tfidf_preprocessing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="09f3b62f-4892-4c4f-e892-ad96f99fe9a1" data-execution_count="15">
+<div class="cell" data-outputid="09f3b62f-4892-4c4f-e892-ad96f99fe9a1">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>similarity_preprocessing <span class="op">=</span> pd.DataFrame(cosine_preprocessing, columns<span class="op">=</span><span class="bu">range</span>(<span class="bu">len</span>(kalimat)), index<span class="op">=</span><span class="bu">range</span>(<span class="bu">len</span>(kalimat)))</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>similarity_preprocessing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -3298,7 +3312,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <h2 data-number="9.2" class="anchored" data-anchor-id="graph"><span class="header-section-number">9.2</span> Graph</h2>
 <p>Hasil dari nilai <em>cosine simmilarity</em> ini akan dapat digunakan untuk membentuk graph dengan menggunakan modul nx.graph. Graph ini akan menggambarkan ilustrasi dari kedekatan setiap kalimatnya dalam berita tersebut. Dalam proses penggambaran graph tersebut diperlukan ambang batas (<em>treshold</em>) yang digunakan untuk memberikan batasan agar keseluruhan kalimatnya tidak dihubungkan menggunakan garis <em>(edge)</em>. Nilai ambang batas (<em>treshold</em>) yang digunakan adalah 0.1</p>
 <p>Graph Tanpa Preprocessing</p>
-<div class="cell" data-outputid="02dabde0-4596-4211-c2a6-91b5df090073" data-execution_count="16">
+<div class="cell" data-outputid="02dabde0-4596-4211-c2a6-91b5df090073">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.DiGraph()</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cosine)):</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    G.add_node(i)</span>
@@ -3320,7 +3334,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 </div>
 </div>
 <p>Graph Menggunakan Preprocessing</p>
-<div class="cell" data-outputid="46b146bd-aff8-445b-9aa8-5d17a636f12f" data-execution_count="17">
+<div class="cell" data-outputid="46b146bd-aff8-445b-9aa8-5d17a636f12f">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>G_preprocessing <span class="op">=</span> nx.DiGraph()</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(cosine_preprocessing)):</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    G_preprocessing.add_node(i)</span>
@@ -3352,7 +3366,7 @@ Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (f
 <p><span class="math display">\[CC(i) = \frac{N-1}{\sum_{j}d(i, j)} \]</span> <br></p>
 <p>Keterangan = <br> N = nomor dari masing-masing node <br> <span class="math inline">\(d(i, j)\)</span> = d adalah panjang jalur terpendek antara node i dan j dalam jaringan</p>
 <p>Closeness Centrality Tanpa Preprocessing</p>
-<div class="cell" data-outputid="fb127432-cccb-4e91-fb5e-6e173de3a281" data-execution_count="18">
+<div class="cell" data-outputid="fb127432-cccb-4e91-fb5e-6e173de3a281">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>closeness<span class="op">=</span> nx.closeness_centrality(G)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sorted_closeness <span class="op">=</span> <span class="bu">sorted</span>(closeness.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3380,7 +3394,7 @@ Node 13: 0.0000
 Node 16: 0.0000</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="51c5a8a3-4c09-4a40-a6cf-09919b9c999d" data-execution_count="19">
+<div class="cell" data-outputid="51c5a8a3-4c09-4a40-a6cf-09919b9c999d">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ringkasan_closeness <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Closeness Centrality:"</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, closeness <span class="kw">in</span> sorted_closeness[:<span class="dv">3</span>]:</span>
@@ -3402,7 +3416,7 @@ Kalimat: Tito meminta dua pj gubernur menangani kemiskinan ekstrem, inflasi, stu
 </div>
 </div>
 <p>Closeness Centrality Menggunakan Preprocessing</p>
-<div class="cell" data-outputid="f78de230-29cc-4010-e85e-a42064b5345f" data-execution_count="20">
+<div class="cell" data-outputid="f78de230-29cc-4010-e85e-a42064b5345f">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>closeness_preprocessing <span class="op">=</span> nx.closeness_centrality(G_preprocessing)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>sorted_closeness_preprocessing <span class="op">=</span> <span class="bu">sorted</span>(closeness_preprocessing.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3430,7 +3444,7 @@ Node 13: 0.0000
 Node 16: 0.0000</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="51c2435e-c45d-4e98-9ef0-8eba11a8711a" data-execution_count="21">
+<div class="cell" data-outputid="51c2435e-c45d-4e98-9ef0-8eba11a8711a">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ringkasan_closeness_preprocessing <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Closeness Centrality Menggunakan Preprocessing:"</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, closeness_preprocessing <span class="kw">in</span> sorted_closeness_preprocessing[:<span class="dv">3</span>]:</span>
@@ -3457,7 +3471,7 @@ Kalimat: Sementara untuk Velix, tugas keamanan di Papua Pegunungan menjadi prior
 <p>Dalam konteks ini, dokumen dianggap sebagai “halaman” yang terhubung oleh hubungan yang merefleksikan keterkaitan atau relevansinya. Dengan menerapkan konsep PageRank, dokumen yang dianggap lebih “penting” atau relevan dapat diberikan skor lebih tinggi. Penggunaan faktor damping, serupa dengan dalam algoritma PageRank, dapat membantu mengontrol sejauh mana pengaruh satu dokumen terhadap yang lain. Dengan memberikan skor pada dokumen berdasarkan hubungan mereka dalam jaringan informasi, kita dapat menghasilkan ringkasan yang mencerminkan tingkat relevansi dan pentingnya masing-masing dokumen dalam konteks keseluruhan. <br><br> <span class="math display">\[S(V_{i}) = (1-d)+d * \sum\frac{1}{Out(V_{j})}S(V_{j})\]</span> <br><br></p>
 <p>Keterangan = <br> d = faktor redaman, jika tidak ada sambungan keluar <br> in(Vi) = tautan masuk dari i, yang merupakan satu set <br> out(Vj) = tautan keluar dari j, yang merupakan satu set <br> |out(Vj)| = jumlah tautan keluar</p>
 <p>Page Rank Tanpa Preprocessing</p>
-<div class="cell" data-outputid="7b9da667-3793-460e-bc4e-a1987c4a4f7b" data-execution_count="22">
+<div class="cell" data-outputid="7b9da667-3793-460e-bc4e-a1987c4a4f7b">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>pagerank <span class="op">=</span> nx.pagerank(G)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>sorted_pagerank<span class="op">=</span> <span class="bu">sorted</span>(pagerank.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3485,7 +3499,7 @@ Node 13: 0.0118
 Node 16: 0.0118</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="25d6a375-b59a-458f-e117-1e91885a8202" data-execution_count="23">
+<div class="cell" data-outputid="25d6a375-b59a-458f-e117-1e91885a8202">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ringkasan_pagerank <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Page Rank :"</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, pagerank <span class="kw">in</span> sorted_pagerank[:<span class="dv">3</span>]:</span>
@@ -3507,7 +3521,7 @@ Kalimat: Pada saat bersamaan, Tito juga melantik Velix Vernando Wanggai sebagai 
 </div>
 </div>
 <p>Page Rank Menggunakan Preprocessing</p>
-<div class="cell" data-outputid="51f07e91-7dc1-48de-87c1-9a8b868d9dde" data-execution_count="24">
+<div class="cell" data-outputid="51f07e91-7dc1-48de-87c1-9a8b868d9dde">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>pagerank_preprocessing <span class="op">=</span> nx.pagerank(G_preprocessing)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>sorted_pagerank_preprocessing<span class="op">=</span> <span class="bu">sorted</span>(pagerank_preprocessing.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3535,7 +3549,7 @@ Node 13: 0.0118
 Node 16: 0.0118</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="8a53d5aa-4d28-4b68-b8fa-e5a223517e4c" data-execution_count="25">
+<div class="cell" data-outputid="8a53d5aa-4d28-4b68-b8fa-e5a223517e4c">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ringkasan_pagerank_preprocessing <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Page Rank Menggunakan Preprocessing:"</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, pagerank_preprocessing <span class="kw">in</span> sorted_pagerank_preprocessing[:<span class="dv">3</span>]:</span>
@@ -3562,7 +3576,7 @@ Kalimat: Pada saat bersamaan, Tito juga melantik Velix Vernando Wanggai sebagai 
 <p>Dalam ringkasan dokumen, eigenvector tidak digunakan secara langsung untuk menghitung ringkasan. Namun, Anda dapat memanfaatkan konsep pengukuran penting dari eigenvector untuk memberikan bobot atau skor pada elemen-elemen dalam dokumen yang mungkin memiliki kepentingan lebih besar dalam rangka membuat ringkasan. Perhitungan eigenvector yang didapatkan dari matriks korelasi untuk menentukan bobot relatif setiap dokumen atau kata. Berikut merupakan rumus untuk menghitung nilai eigenvector. <br><br> <span class="math display">\[det(λ.I-A)\]</span><br><br></p>
 <p>Keterangan = <br> det(⋅) = Merupakan fungsi determinan, yang menghasilkan nilai determinan dari suatu matriks. <br> λ = Merupakan simbol yang mewakili eigenvalue yang sedang dicari. <br> I = Merupakan matriks identitas yang sesuai dengan dimensi matriks. <br> A = Merupakan matriks yang eigenvalues-nya ingin dicari.</p>
 <p>Eigen Vector Tanpa Preprocessing</p>
-<div class="cell" data-outputid="f3dd26b1-be77-4b10-afd5-7a9f0d016aa5" data-execution_count="26">
+<div class="cell" data-outputid="f3dd26b1-be77-4b10-afd5-7a9f0d016aa5">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>eigenvector <span class="op">=</span> nx.eigenvector_centrality(G)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>sorted_eigenvector<span class="op">=</span> <span class="bu">sorted</span>(eigenvector.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3590,7 +3604,7 @@ Node 13: 0.0000
 Node 16: 0.0000</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="ed0c6030-a008-43c3-bbe5-bf3857f55d47" data-execution_count="27">
+<div class="cell" data-outputid="ed0c6030-a008-43c3-bbe5-bf3857f55d47">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ringkasan_eigenvector <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Eigen Vector:"</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, eigenvector <span class="kw">in</span> sorted_eigenvector[:<span class="dv">3</span>]:</span>
@@ -3611,7 +3625,7 @@ Kalimat: Tito meminta dua pj gubernur menangani kemiskinan ekstrem, inflasi, stu
 </code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="bb25036d-baa9-41a9-eeb7-d1aa26352eba" data-execution_count="28">
+<div class="cell" data-outputid="bb25036d-baa9-41a9-eeb7-d1aa26352eba">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>eigenvector_preprocessing <span class="op">=</span> nx.eigenvector_centrality(G_preprocessing)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>sorted_eigenvector_preprocessing<span class="op">=</span> <span class="bu">sorted</span>(eigenvector_preprocessing.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
@@ -3639,7 +3653,7 @@ Node 13: 0.0000
 Node 16: 0.0000</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="8b60bf8e-9a66-41c4-aa8e-5b5ab592ee6c" data-execution_count="29">
+<div class="cell" data-outputid="8b60bf8e-9a66-41c4-aa8e-5b5ab592ee6c">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>ringkasan_eigenvector_preprocessing <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tiga Node Tertinggi Eigen Vector Menggunakan Preprocessing:"</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, eigenvector_preprocessing <span class="kw">in</span> sorted_eigenvector_preprocessing[:<span class="dv">3</span>]:</span>
@@ -3665,17 +3679,17 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 <section id="evaluasi" class="level1" data-number="11">
 <h1 data-number="11"><span class="header-section-number">11</span> Evaluasi</h1>
 <p>ROUGE (<em>Recall-Oriented Understudy for Gisting Evaluation</em>) adalah sekelompok metrik evaluasi otomatis yang umum digunakan untuk mengukur kualitas ringkasan teks. ROUGE memiliki beberapa varian, dan di antaranya, ROUGE-1, ROUGE-2, dan ROUGE-L merupakan metrik yang sering digunakan untuk mengukur sejauh mana kedekatan ringkasan sistem dengan ringkasan referensi.</p>
-<div class="cell" data-execution_count="30">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co">#referensi ringkasan yang dibuat secara manual</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>referensi <span class="op">=</span> [<span class="st">'Menteri Dalam Negeri Tito Karnavian melantik Safrizal ZA sebagai Penjabat Gubernur Bangka Belitung dan Velix Vernando Wanggai sebagai Penjabat Gubernur Papua Pegunungan.Tito menugaskan kedua penjabat gubernur untuk menangani isu kemiskinan ekstrem, inflasi, stunting, infrastruktur, pendidikan, kesehatan, serta persoalan khusus di wilayah masing-masing. Tito menitipkan persiapan Pemilu Serentak dan Pilkada Serentak 2024 kepada mereka, dengan harapan agar dapat membantu Komisi Pemilihan Umum (KPU) serta menekankan koordinasi dengan bupati dan wali kota untuk menyelesaikan naskah perjanjian hibah daerah.'</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="6d55a64b-29f9-4a14-b1b1-b8c46517604d" data-execution_count="31">
+<div class="cell" data-outputid="6d55a64b-29f9-4a14-b1b1-b8c46517604d">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(referensi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['Menteri Dalam Negeri Tito Karnavian melantik Safrizal ZA sebagai Penjabat Gubernur Bangka Belitung dan Velix Vernando Wanggai sebagai Penjabat Gubernur Papua Pegunungan.Tito menugaskan kedua penjabat gubernur untuk menangani isu kemiskinan ekstrem, inflasi, stunting, infrastruktur, pendidikan, kesehatan, serta persoalan khusus di wilayah masing-masing. Tito menitipkan persiapan Pemilu Serentak dan Pilkada Serentak 2024 kepada mereka, dengan harapan agar dapat membantu Komisi Pemilihan Umum (KPU) serta menekankan koordinasi dengan bupati dan wali kota untuk menyelesaikan naskah perjanjian hibah daerah.']</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="32">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> rouge(referensi, hasil_ringkasan):</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    rouge <span class="op">=</span> Rouge()</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    scores <span class="op">=</span> rouge.get_scores(hasil_ringkasan, referensi)</span>
@@ -3683,13 +3697,13 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 </div>
 <section id="closeness-centrality-1" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="closeness-centrality-1"><span class="header-section-number">11.1</span> Closeness Centrality</h2>
-<div class="cell" data-outputid="d76690ef-f79d-46e7-e328-1f08de6dcf7b" data-execution_count="33">
+<div class="cell" data-outputid="d76690ef-f79d-46e7-e328-1f08de6dcf7b">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_closeness)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.3333333333333333, 'p': 0.5641025641025641, 'f': 0.41904761437823135}, 'rouge-2': {'r': 0.14864864864864866, 'p': 0.25, 'f': 0.1864406732892848}, 'rouge-l': {'r': 0.2878787878787879, 'p': 0.48717948717948717, 'f': 0.3619047572353742}}]</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="f58243a0-ddd1-4901-fea7-4e85e0c4c2ed" data-execution_count="34">
+<div class="cell" data-outputid="f58243a0-ddd1-4901-fea7-4e85e0c4c2ed">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_closeness_preprocessing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.22727272727272727, 'p': 0.42857142857142855, 'f': 0.2970296984413293}, 'rouge-2': {'r': 0.08108108108108109, 'p': 0.15384615384615385, 'f': 0.10619468574516426}, 'rouge-l': {'r': 0.18181818181818182, 'p': 0.34285714285714286, 'f': 0.23762375784726997}}]</code></pre>
@@ -3700,13 +3714,13 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 </section>
 <section id="page-rank-1" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="page-rank-1"><span class="header-section-number">11.2</span> Page Rank</h2>
-<div class="cell" data-outputid="22c85a46-a720-41fa-eb4e-468f270bc356" data-execution_count="35">
+<div class="cell" data-outputid="22c85a46-a720-41fa-eb4e-468f270bc356">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_pagerank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.4090909090909091, 'p': 0.675, 'f': 0.5094339575649698}, 'rouge-2': {'r': 0.24324324324324326, 'p': 0.4186046511627907, 'f': 0.3076923030433195}, 'rouge-l': {'r': 0.4090909090909091, 'p': 0.675, 'f': 0.5094339575649698}}]</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="9727af77-048b-40dc-bfdb-401119b54300" data-execution_count="36">
+<div class="cell" data-outputid="9727af77-048b-40dc-bfdb-401119b54300">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_pagerank_preprocessing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.30303030303030304, 'p': 0.5714285714285714, 'f': 0.39603959943142836}, 'rouge-2': {'r': 0.17567567567567569, 'p': 0.34210526315789475, 'f': 0.23214285265943885}, 'rouge-l': {'r': 0.30303030303030304, 'p': 0.5714285714285714, 'f': 0.39603959943142836}}]</code></pre>
@@ -3716,13 +3730,13 @@ Kalimat: Menteri Dalam Negeri (Mendagri) Tito Karnavian menunjuk Safrizal ZA seb
 </section>
 <section id="eigen-vector-1" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="eigen-vector-1"><span class="header-section-number">11.3</span> Eigen Vector</h2>
-<div class="cell" data-outputid="e481f200-1287-4e42-86e6-741faff39517" data-execution_count="37">
+<div class="cell" data-outputid="e481f200-1287-4e42-86e6-741faff39517">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_eigenvector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.3333333333333333, 'p': 0.5641025641025641, 'f': 0.41904761437823135}, 'rouge-2': {'r': 0.14864864864864866, 'p': 0.25, 'f': 0.1864406732892848}, 'rouge-l': {'r': 0.2878787878787879, 'p': 0.48717948717948717, 'f': 0.3619047572353742}}]</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="efb8655e-f9fa-40d4-e912-068fe7fd606e" data-execution_count="38">
+<div class="cell" data-outputid="efb8655e-f9fa-40d4-e912-068fe7fd606e">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>rouge(referensi[<span class="dv">0</span>], ringkasan_eigenvector_preprocessing)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[{'rouge-1': {'r': 0.30303030303030304, 'p': 0.5405405405405406, 'f': 0.3883495099594685}, 'rouge-2': {'r': 0.17567567567567569, 'p': 0.29545454545454547, 'f': 0.22033897837403055}, 'rouge-l': {'r': 0.30303030303030304, 'p': 0.5405405405405406, 'f': 0.3883495099594685}}]</code></pre>
@@ -3975,6 +3989,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./news_keywords.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mencari Kata Kunci Berita</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
